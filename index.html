@@ -1,101 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Gridt</title>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Layout</title>
+
+  <style>
     body {
-        background: #f5f5f5;
-        padding: 40px;
-        font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
     }
 
     .container {
-        width: 500px;
-        margin: auto;
+      max-width: 700px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
-    
-    .top-bar {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 20px;
+    /* === TOP BIG RECTANGLE === */
+    .top-wrapper {
+      border: 2px solid #000;
+      padding: 10px;
+      background: white;
     }
 
-    .top-long {
-        flex: 1;
-        height: 40px;
-        background: #ddd;
-        border: 2px solid #333;
-        border-radius: 4px;
+    /* inside layout: 1 rectangle + 2 squares */
+    .top-row {
+      display: flex;
+      gap: 10px;
     }
 
-    .top-small {
-        width: 40px;
-        height: 40px;
-        background: #ddd;
-        border: 2px solid #333;
-        border-radius: 4px;
+    /* wide rectangle */
+    .top-rectangle {
+      flex: 2;        /* mas malapad */
+      height: 80px;
+      border: 2px solid #000;
     }
 
-    
-    .grid-section {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 15px;
+    /* squares */
+    .top-square {
+      flex: 1;        /* same width squares */
+      height: 80px;
+      border: 2px solid #000;
     }
 
-    .box {
-        background: #ddd;
-        border: 2px solid #333;
-        border-radius: 4px;
+    /* === MIDDLE PART === */
+    .middle-boxes {
+      display: flex;
+      gap: 10px;
     }
 
-    .tall-box {
-        grid-row: span 3;
+    .side-column {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
-    
-    .col {
-        display: grid;
-        gap: 15px;
+    .side-box {
+      border: 2px solid #000;
+      height: 80px;
+      background: white;
     }
-</style>
+
+    .center-box {
+      width: 20%;
+      border: 2px solid #000;
+      height: 268px;
+      background: white;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="container">
+  <div class="container">
 
-   
-    <div class="top-bar">
-        <div class="top-long"></div>
-        <div class="top-small"></div>
-        <div class="top-small"></div>
-    </div>
+    <!-- TOP BIG RECTANGLE -->
+    <div class="top-wrapper">
 
-   
-    <div class="grid-section">
-        
-        
-        <div class="col">
-            <div class="box" style="height:50px;"></div>
-            <div class="box" style="height:50px;"></div>
-            <div class="box" style="height:50px;"></div>
-        </div>
-
-        
-        <div class="tall-box box"></div>
-
-        
-        <div class="col">
-            <div class="box" style="height:50px;"></div>
-            <div class="box" style="height:50px;"></div>
-            <div class="box" style="height:50px;"></div>
-        </div>
+      <!-- inside: wide rectangle + 2 squares -->
+      <div class="top-row">
+        <div class="top-rectangle"></div>
+        <div class="top-square"></div>
+        <div class="top-square"></div>
+      </div>
 
     </div>
 
-</div>
+    <!-- MIDDLE PART -->
+    <div class="middle-boxes">
+
+      <div class="side-column">
+        <div class="side-box"></div>
+        <div class="side-box"></div>
+        <div class="side-box"></div>
+      </div>
+
+      <div class="center-box"></div>
+
+      <div class="side-column">
+        <div class="side-box"></div>
+        <div class="side-box"></div>
+        <div class="side-box"></div>
+      </div>
+
+    </div>
+
+  </div>
 
 </body>
 </html>
+
+
+
+Sumulat sa Danela Castro
